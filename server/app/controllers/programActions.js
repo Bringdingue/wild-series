@@ -36,4 +36,18 @@ const browse = (req, res) => {
   }
 };
 
-module.exports = { browse };
+const read = (req, res) => {
+  const parsedId = parseInt(req.params.id, 10);
+
+  const program = programs.find((p) => p.id === parsedId);
+
+  if (program != null) {
+    res.json(program);
+  } else {
+    res.sendStatus(404);
+  }
+};
+
+// Export them to import them somewhere else
+
+module.exports = { browse, read };

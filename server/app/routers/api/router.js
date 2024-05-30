@@ -9,6 +9,7 @@ router.get("/", sayWelcome);
 const categoriesRouter = require("./categories/router");
 
 router.use("/categories", categoriesRouter);
+
 const programsRouter = require("./programs/router");
 
 router.use("/programs", programsRouter);
